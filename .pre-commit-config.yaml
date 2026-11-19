@@ -1,0 +1,29 @@
+# Pre-commit hooks configuration
+# Install: make pre-commit-install
+# Run manually: pre-commit run --all-files
+
+repos:
+  # Ruff - Python linting and formatting
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.8.4
+    hooks:
+      - id: ruff-format
+      - id: ruff
+        args: [--fix, --select, I]
+      - id: ruff
+        args: [--fix]
+
+  # Shell script formatting
+  - repo: https://github.com/scop/pre-commit-shfmt
+    rev: v3.10.0-1
+    hooks:
+      - id: shfmt
+        args: [-i, "4", -w]
+
+  # TOML file sorting
+  - repo: https://github.com/pappasam/toml-sort
+    rev: v0.24.2
+    hooks:
+      - id: toml-sort-fix
+        files: pyproject\.toml$
+

@@ -1,0 +1,6 @@
+---
+description:
+globs:
+alwaysApply: true
+---
+Coding standards are maintained in CLAUDE.md at the project root. See the "Coding Standards" section.
